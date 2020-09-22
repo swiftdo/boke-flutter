@@ -1,6 +1,6 @@
-# flutter_web
+# boke-flutter
 
-[OHeroJ/flutter_web](https://github.com/OHeroJ/flutter_web)
+[swiftdo/boke-flutter](https://github.com/swiftdo/boke-flutter.git)
 
 ## 安装运行
 
@@ -9,10 +9,6 @@ flutter channel beta
 flutter upgrade
 flutter config --enable-web
 ```
-
-## 预览
-
-![](https://github.com/OHeroJ/flutter_web/blob/master/preview/web.gif?raw=true)
 
 ## 联系
 
