@@ -1,18 +1,19 @@
+import 'package:boke/locator.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/routing/route_names.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/ui/widgets/article_details/article_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:boke/locator.dart';
-import 'package:boke/services/services.dart';
-import 'package:boke/routing/route_names.dart';
-import 'package:boke/ui/widgets/article_details/article_item_widget.dart';
-import 'state_articles.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:boke/model/model.dart';
+
+import 'state_articles.dart';
 
 class PageArticles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderWidget<StateArticles>(
-      model: StateArticles('D482DDC3-D723-4F7A-8F31-6A0D399F3A27'),
+      model: StateArticles(),
       onModelReady: (model) => model.initData(),
       builder: (context, model, child) {
         if (model.viewState == ViewState.busy) {

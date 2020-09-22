@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:boke/locator.dart';
 import 'package:boke/model/model.dart';
 import 'package:boke/services/services.dart';
-import 'state_admin_article.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
+
+import 'state_admin_article.dart';
 
 class StateAdminArticleAdd extends ViewStateModel {
   final StateAdminArticle articleState;

@@ -20,7 +20,7 @@ class PageAdminArticle extends StatelessWidget {
         model: StateAdminArticle(globalUser: Provider.of(context)),
         onModelReady: (StateAdminArticle model) => model.loadTopics(),
         builder: (context, StateAdminArticle state, child) {
-          if (state.viewState == ViewState.busy || state.topics.length == 0) {
+          if (state.viewState == ViewState.busy) {
             return ViewStateBusyWidget();
           }
           List tags = state.topics.map((e) => e.toMap()).toList();
@@ -189,24 +189,26 @@ class PageAdminArticle extends StatelessWidget {
   ) {
     bool isMarkdown = addState.selectContentType == TopicContentType.markdown;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          child: Text(
-            '添加 Topic',
-            style: TextStyle(fontSize: 20),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            child: Text(
+              '添加 Topic',
+              style: TextStyle(fontSize: 20),
+            ),
+            margin: EdgeInsets.only(bottom: 20),
           ),
-          margin: EdgeInsets.only(bottom: 20),
-        ),
-        _buildSelectContentType(context, addState),
-        _buildSelectSubject(context, addState),
-        _buildSelectTags(context, addState),
-        _buildTitleRow(addState),
-        isMarkdown ? _buildContentRow(addState) : _buildUrlRow(addState),
-        _buildRemarksRow(addState),
-        _buildSubmitRow(addState, context),
-      ],
+          _buildSelectContentType(context, addState),
+          _buildSelectSubject(context, addState),
+          _buildSelectTags(context, addState),
+          _buildTitleRow(addState),
+          isMarkdown ? _buildContentRow(addState) : _buildUrlRow(addState),
+          _buildRemarksRow(addState),
+          _buildSubmitRow(addState, context),
+        ],
+      ),
     );
   }
 

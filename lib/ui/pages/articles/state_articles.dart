@@ -7,7 +7,7 @@ class StateArticles extends ViewStateRefreshListModel {
   WebRepository repository = locator<WebRepository>();
 
   final String subjectId;
-  StateArticles(this.subjectId);
+  StateArticles({this.subjectId});
 
   List<Topic> _news;
   List<Topic> get news => _news;
