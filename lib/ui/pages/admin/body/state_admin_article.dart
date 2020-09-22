@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -30,8 +30,7 @@ class StateAdminArticle extends ViewStateModel {
     try {
       var response = await repository.getTopicList(page: page, per: per);
       _hasPreview = response.metadata.page > 1;
-      _hasNext = response.metadata.total >
-          response.metadata.page * response.metadata.per;
+      _hasNext = response.metadata.total > response.metadata.page * response.metadata.per;
       _topics = response.items;
       setIdle();
     } catch (e, s) {
@@ -45,9 +44,7 @@ class StateAdminArticle extends ViewStateModel {
   }
 
   void deleteTopic(Topic topic, context) {
-    repository
-        .deleteTopic(id: topic.id, token: globalUser.token.accessToken)
-        .then((value) {
+    repository.deleteTopic(id: topic.id, token: globalUser.token.accessToken).then((value) {
       _topics.remove(topic);
       notifyListeners();
       showToast('删除成功', context: context);

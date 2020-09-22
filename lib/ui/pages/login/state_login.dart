@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/macro.dart';
-import 'package:flutter_web/services/services.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/macro.dart';
+import 'package:boke/services/services.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 
-import 'global_user_state.dart';
+import 'package:boke/states/global_user_state.dart';
 
 class StateLogin extends ViewStateModel {
   final GlobalUserState globalUserState;
@@ -36,10 +36,7 @@ class StateLogin extends ViewStateModel {
   }
 
   void changeEnableLogin() {
-    if (_email != null &&
-        _email.isNotEmpty &&
-        _password != null &&
-        _password.isNotEmpty) {
+    if (_email != null && _email.isNotEmpty && _password != null && _password.isNotEmpty) {
       _enableLogin = true;
     } else {
       _enableLogin = false;

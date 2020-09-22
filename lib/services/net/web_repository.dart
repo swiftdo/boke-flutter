@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 import 'package:loveli_core/loveli_core.dart';
 
 import 'api.dart';
@@ -9,16 +9,13 @@ import 'models.dart';
 class WebRepository {
   // Auth
   Future<ModelLogin> login({String email, String pwd}) async {
-    var response = await http.post("/auth/login",
-        data: FormData.fromMap({"email": email, "password": pwd}));
+    var response = await http.post("/auth/login", data: FormData.fromMap({"email": email, "password": pwd}));
     Map data = response.data;
     return ModelLogin.fromMap(data);
   }
 
-  Future<ModelPage<Topic>> subjectTopics(String subjectId,
-      {int page, int per = 10}) async {
-    var response = await http.get("/subject/$subjectId/topics",
-        queryParameters: {"per": per, "page": page});
+  Future<ModelPage<Topic>> subjectTopics(String subjectId, {int page, int per = 10}) async {
+    var response = await http.get("/subject/$subjectId/topics", queryParameters: {"per": per, "page": page});
     Map data = response.data;
     return ModelPage<Topic>.fromMap(data, transform: (json) {
       return Topic.fromMap(json);
@@ -146,8 +143,7 @@ class WebRepository {
   }
 
   Future<ModelPage<Topic>> getTopicList({int per, int page}) async {
-    var response = await http
-        .get("/topic/all", queryParameters: {"per": per, "page": page});
+    var response = await http.get("/topic/all", queryParameters: {"per": per, "page": page});
     Map data = response.data;
     return ModelPage<Topic>.fromMap(data, transform: (json) {
       return Topic.fromMap(json);
@@ -163,16 +159,14 @@ class WebRepository {
 
   /// booklet
   Future<ModelPage<Booklet>> getBookletList({int per, int page}) async {
-    var response = await http
-        .get("/booklet/list", queryParameters: {"per": per, "page": page});
+    var response = await http.get("/booklet/list", queryParameters: {"per": per, "page": page});
     Map data = response.data;
     return ModelPage<Booklet>.fromMap(data, transform: (json) {
       return Booklet.fromMap(json);
     });
   }
 
-  Future<Booklet> createBooklet(
-      {String name, String remarks, String cover, String token}) async {
+  Future<Booklet> createBooklet({String name, String remarks, String cover, String token}) async {
     var response = await http.post(
       '/booklet/add',
       options: Options(headers: {'Authorization': 'Bearer $token'}),
@@ -186,12 +180,7 @@ class WebRepository {
     return Booklet.fromMap(data);
   }
 
-  Future<Booklet> updateBooklet(
-      {String name,
-      String remarks,
-      String cover,
-      String token,
-      String id}) async {
+  Future<Booklet> updateBooklet({String name, String remarks, String cover, String token, String id}) async {
     var response = await http.post(
       '/booklet/update',
       options: Options(headers: {'Authorization': 'Bearer $token'}),

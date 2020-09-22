@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/states/state_admin_article.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/services/services.dart';
+import 'state_admin_article.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -13,10 +13,7 @@ class StateAdminArticleAdd extends ViewStateModel {
     @required this.articleState,
   });
 
-  final List<TopicContentType> contentTypes = [
-    TopicContentType.html,
-    TopicContentType.markdown
-  ];
+  final List<TopicContentType> contentTypes = [TopicContentType.html, TopicContentType.markdown];
 
   String _title;
   String _content;

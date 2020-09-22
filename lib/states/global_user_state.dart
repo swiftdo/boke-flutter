@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:loveli_core/loveli_core.dart';
-import '../model/model.dart';
-import 'package:flutter_web/macro.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/macro.dart';
 
 class GlobalUserState extends ViewStateModel {
   User _user;

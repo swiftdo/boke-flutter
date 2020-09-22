@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/routing/route_names.dart';
-import 'package:flutter_web/states/states.dart';
+import 'package:boke/routing/route_names.dart';
 import 'package:provider/provider.dart';
+import 'package:boke/states/global_user_state.dart';
+import 'package:boke/states/state_theme.dart';
 
 import '../navbar_item/navbar_item.dart';
 import 'navbar_logo.dart';
@@ -53,9 +54,7 @@ class NavigationBarTableDesktop extends StatelessWidget {
                       margin: const EdgeInsets.only(right: 20),
                       child: Image(
                         image: AssetImage(
-                          state.isDark
-                              ? 'assets/images/theme_light.png'
-                              : 'assets/images/theme_dark.png',
+                          state.isDark ? 'assets/images/theme_light.png' : 'assets/images/theme_dark.png',
                         ),
                         color: state.isDark ? Colors.white : Colors.black,
                         width: 30,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/services/services.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/services/services.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class NavBarLogo extends StatelessWidget {
@@ -20,9 +20,7 @@ class NavBarLogo extends StatelessWidget {
             locator<ServiceNavigation>().navigateTo(navigationPath);
           },
           child: Padding(
-            padding: sizeInfo.isMobile
-                ? EdgeInsets.only(right: 10)
-                : EdgeInsets.only(left: 10),
+            padding: sizeInfo.isMobile ? EdgeInsets.only(right: 10) : EdgeInsets.only(left: 10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(radius),
               child: SizedBox(

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 

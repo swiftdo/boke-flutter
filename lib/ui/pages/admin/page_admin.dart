@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/states/states.dart';
+import 'state_admin_menu.dart';
 import 'package:provider/provider.dart';
 
 class PageAdmin extends StatelessWidget {
@@ -33,9 +33,7 @@ class PageAdmin extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                       height: MediaQuery.of(context).size.height - 64 - 32,
                       child: Consumer<StateAdminMenu>(
                         builder: (context, state, child) {
@@ -76,8 +74,7 @@ class MenuItemView extends StatelessWidget {
             padding: EdgeInsets.only(left: 10.0 * level),
             child: Text(
               root.title,
-              style: TextStyle(
-                  color: root.isSelect ? Colors.red : Color(0xff333333)),
+              style: TextStyle(color: root.isSelect ? Colors.red : Color(0xff333333)),
             ),
           ),
         ),
@@ -86,8 +83,7 @@ class MenuItemView extends StatelessWidget {
       return ExpansionTile(
         key: PageStorageKey<MenuItem>(root),
         title: Text(root.title),
-        children:
-            root.child.map((e) => _buildMenus(e, level: level + 1)).toList(),
+        children: root.child.map((e) => _buildMenus(e, level: level + 1)).toList(),
       );
     }
   }

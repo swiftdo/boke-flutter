@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/locator.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/locator.dart';
 import 'package:oktoast/oktoast.dart';
 
 class StateAdminTag extends ViewStateModel {
@@ -40,9 +40,7 @@ class StateAdminTag extends ViewStateModel {
   }
 
   void deleteTag(Tag tag, context) {
-    repository
-        .deleteTag(id: tag.id, token: globalUser.token.accessToken)
-        .then((value) {
+    repository.deleteTag(id: tag.id, token: globalUser.token.accessToken).then((value) {
       _tags.remove(tag);
       notifyListeners();
       showToast('删除成功', context: context);

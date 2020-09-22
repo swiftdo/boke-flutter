@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/states/state_admin_catalog.dart';
-import 'package:flutter_web/states/states.dart';
+import 'state_admin_catalog.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 import 'package:markdown_widget/markdown_widget.dart';
 
 class PageAdminCatalog extends StatelessWidget {
@@ -275,10 +274,7 @@ class PageAdminCatalog extends StatelessWidget {
         child: isSelect
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  titleContent,
-                  _createCatalogMenu(state, catalog.noChild, context)
-                ],
+                children: [titleContent, _createCatalogMenu(state, catalog.noChild, context)],
               )
             : titleContent,
       ),
@@ -292,11 +288,7 @@ class PageAdminCatalog extends StatelessWidget {
           ? titleWidget
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                titleWidget,
-                ...catalog.child
-                    .map((e) => _buildCatalogSubMenu(e, state, context))
-              ],
+              children: [titleWidget, ...catalog.child.map((e) => _buildCatalogSubMenu(e, state, context))],
             ),
     );
   }

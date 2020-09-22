@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/ui/pages/admin/body/page_admin_subject.dart';
+import 'package:boke/ui/pages/admin/body/page_admin_subject.dart';
 import 'package:loveli_core/loveli_core.dart';
-import '../ui/pages/admin/body/body.dart';
+import 'body/body.dart';
 
 class MenuItem {
   String title;

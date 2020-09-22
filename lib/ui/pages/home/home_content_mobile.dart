@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/locator.dart';
+import 'package:boke/locator.dart';
 
 import '../../../routing/routing.dart';
 import '../../../services/services.dart';
@@ -18,8 +18,7 @@ class HomeContentMobile extends StatelessWidget {
         ),
         CallToAction(
           title: '进入阅读',
-          onPressed: () =>
-              locator<ServiceNavigation>().navigateTo(RouteArticles),
+          onPressed: () => locator<ServiceNavigation>().navigateTo(RouteArticles),
         )
       ],
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/services/services.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/services/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 

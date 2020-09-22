@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/model/booklet.dart';
-import 'package:flutter_web/ui/pages/admin/body/body.dart';
-import 'package:flutter_web/ui/pages/layout_template/layout_admin_template.dart';
-import 'package:flutter_web/ui/ui.dart';
+import 'package:boke/model/booklet.dart';
+import 'package:boke/ui/pages/admin/body/body.dart';
+import 'package:boke/ui/pages/layout_template/layout_admin_template.dart';
+import 'package:boke/ui/ui.dart';
 import 'package:loveli_core/loveli_core.dart';
 
 import 'route_names.dart';
@@ -53,8 +53,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   }
 }
 
-PageRoute _getAdminPageRoute(
-    {@required Widget child, @required RouteSettings settings}) {
+PageRoute _getAdminPageRoute({@required Widget child, @required RouteSettings settings}) {
   return _FadeRoute(
       child: LayoutAdminTemplate(
         child: child,
@@ -62,8 +61,7 @@ PageRoute _getAdminPageRoute(
       routeName: settings.name);
 }
 
-PageRoute _getPageRoute(
-    {@required Widget child, @required RouteSettings settings}) {
+PageRoute _getPageRoute({@required Widget child, @required RouteSettings settings}) {
   return _FadeRoute(
       child: LayoutTemplate(
         child: child,
@@ -79,8 +77,7 @@ class _FadeRoute extends PageRouteBuilder {
       : super(
             settings: RouteSettings(name: routeName),
             pageBuilder: (ctx, animation, secondaryAnimation) => child,
-            transitionsBuilder: (ctx, animation, secondaryAnimation, child) =>
-                FadeTransition(
+            transitionsBuilder: (ctx, animation, secondaryAnimation, child) => FadeTransition(
                   opacity: animation,
                   child: child,
                 ));

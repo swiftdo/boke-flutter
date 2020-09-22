@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web/model/booklet.dart';
-import 'package:flutter_web/states/states.dart';
+import 'package:boke/model/booklet.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
+import 'state_admin_booklet.dart';
 
 import '../table/table.dart';
 import 'page_admin_catalog.dart';
@@ -163,8 +163,7 @@ class PageAdminBooklet extends StatelessWidget {
     );
   }
 
-  _showAddForm(BuildContext context, StateAdminBooklet bookletState,
-      {bool edit = false}) {
+  _showAddForm(BuildContext context, StateAdminBooklet bookletState, {bool edit = false}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -206,16 +205,13 @@ class PageAdminBooklet extends StatelessWidget {
     );
   }
 
-  Container _buildSubmitRow(
-      StateAdminBooklet addState, BuildContext context, bool isEdit) {
+  Container _buildSubmitRow(StateAdminBooklet addState, BuildContext context, bool isEdit) {
     return Container(
       margin: EdgeInsets.only(top: 20),
       child: OutlineButton(
         child: Text(isEdit ? '更新' : '提交'),
         onPressed: () async {
-          var response = isEdit
-              ? await addState.updateBooklet(context)
-              : await addState.createBooklet(context);
+          var response = isEdit ? await addState.updateBooklet(context) : await addState.createBooklet(context);
           if (response != null) {
             showToast(isEdit ? '更新成功' : '创建成功', context: context);
             Navigator.of(context).pop();
@@ -267,9 +263,8 @@ class PageAdminBooklet extends StatelessWidget {
       onTap: () {},
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.blue),
-            borderRadius: BorderRadius.all(Radius.circular(30))),
+        decoration:
+            BoxDecoration(border: Border.all(color: Colors.blue), borderRadius: BorderRadius.all(Radius.circular(30))),
         child: Text('这是InkWell点击效果'),
       ),
     );

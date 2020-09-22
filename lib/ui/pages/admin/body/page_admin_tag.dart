@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web/states/states.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:provider/provider.dart';
 import 'package:oktoast/oktoast.dart';
+import 'state_admin_tag.dart';
 
 import '../table/table.dart';
 
@@ -83,8 +83,7 @@ class PageAdminTag extends StatelessWidget {
                                   height: 280,
                                   padding: EdgeInsets.all(20),
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         child: Text(
@@ -114,11 +113,9 @@ class PageAdminTag extends StatelessWidget {
                                         child: OutlineButton(
                                           child: Text('提交'),
                                           onPressed: () async {
-                                            var response =
-                                                await state.createTag(context);
+                                            var response = await state.createTag(context);
                                             if (response != null) {
-                                              showToast('创建成功',
-                                                  context: context);
+                                              showToast('创建成功', context: context);
                                               Navigator.of(context).pop();
                                             }
                                           },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/states/states.dart';
+import 'state_article_detail.dart';
+import 'package:boke/states/state_theme.dart';
 import 'package:markdown_widget/markdown_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +29,7 @@ class PageArticleDetail extends StatelessWidget {
               right: 16,
             ),
             styleConfig: StyleConfig(
-              markdownTheme:
-                  isDark ? MarkdownTheme.darkTheme : MarkdownTheme.lightTheme,
+              markdownTheme: isDark ? MarkdownTheme.darkTheme : MarkdownTheme.lightTheme,
               ulConfig: UlConfig(
                 textStyle: TextStyle(
                   fontSize: 16,

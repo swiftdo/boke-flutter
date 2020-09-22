@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../themes/web_theme_data.dart';
+import 'package:boke/themes/web_theme_data.dart';
 
 class StateTheme extends ChangeNotifier {
   ThemeData get theme => isDark ? WebThemeData.dark : WebThemeData.light;

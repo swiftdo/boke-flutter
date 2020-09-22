@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/routing/route_names.dart';
+import 'package:boke/routing/route_names.dart';
 
 import '../navbar_item/navbar_item.dart';
 import 'navigation_drawer_header.dart';
@@ -10,8 +10,7 @@ class NavigationDrawer extends StatelessWidget {
     return Container(
       width: 300,
       decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
+          color: Theme.of(context).primaryColor, boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
       child: Column(
         children: <Widget>[
           NavigationDrawerHeader(),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/routing/route_names.dart';
-import 'package:flutter_web/ui/widgets/article_details/article_item_widget.dart';
-import 'package:flutter_web/states/states.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/routing/route_names.dart';
+import 'package:boke/ui/widgets/article_details/article_item_widget.dart';
+import 'state_articles.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 
 class PageArticles extends StatelessWidget {
   @override
@@ -18,8 +18,7 @@ class PageArticles extends StatelessWidget {
         if (model.viewState == ViewState.busy) {
           return ViewStateBusyWidget();
         } else if (model.viewState == ViewState.error && model.list.isEmpty) {
-          return ViewStateErrorWidget(
-              error: model.viewStateError, onPressed: model.initData);
+          return ViewStateErrorWidget(error: model.viewStateError, onPressed: model.initData);
         } else if (model.viewState == ViewState.empty) {
           return ViewStateEmptyWidget(
             onPressed: model.initData,
@@ -41,8 +40,7 @@ class PageArticles extends StatelessWidget {
                 return ArticleItemWidget(
                   item,
                   onTap: () {
-                    locator<ServiceNavigation>().navigateTo(RouteArticleDetail,
-                        queryParams: {'topicId': item.id});
+                    locator<ServiceNavigation>().navigateTo(RouteArticleDetail, queryParams: {'topicId': item.id});
                   },
                 );
               }),

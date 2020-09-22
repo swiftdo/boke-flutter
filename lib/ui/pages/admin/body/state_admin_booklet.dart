@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/locator.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/locator.dart';
 import 'package:oktoast/oktoast.dart';
 
 class StateAdminBooklet extends ViewStateModel {
@@ -38,8 +38,7 @@ class StateAdminBooklet extends ViewStateModel {
     try {
       var response = await repository.getBookletList(page: page, per: per);
       _hasPreview = response.metadata.page > 1;
-      _hasNext = response.metadata.total >
-          response.metadata.page * response.metadata.per;
+      _hasNext = response.metadata.total > response.metadata.page * response.metadata.per;
       _booklets = response.items;
       setIdle();
     } catch (e, s) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/routing/route_names.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/routing/route_names.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:provider/provider.dart';
 
 class LayoutAdminTemplate extends StatelessWidget {

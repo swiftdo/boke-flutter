@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 
 class ModelLogin {
   Token token;

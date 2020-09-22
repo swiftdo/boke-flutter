@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/model/spiders.dart';
-import 'package:flutter_web/states/states.dart';
+import 'package:boke/model/spiders.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:provider/provider.dart';
 import '../table/table.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:getflutter/getflutter.dart';
+import 'state_admin_spider.dart';
 
 class PageAdminSpider extends StatelessWidget {
   @override

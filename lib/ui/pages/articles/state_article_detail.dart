@@ -1,6 +1,6 @@
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/services/services.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/services/services.dart';
 import 'package:loveli_core/loveli_core.dart';
 
 class StateArticleDetail extends ViewStateModel {

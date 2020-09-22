@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_web/states/global_user_state.dart';
+import 'package:boke/states/global_user_state.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'package:flutter_web/services/services.dart';
-import 'package:flutter_web/model/model.dart';
-import 'package:flutter_web/locator.dart';
+import 'package:boke/services/services.dart';
+import 'package:boke/model/model.dart';
+import 'package:boke/locator.dart';
 import 'package:oktoast/oktoast.dart';
 
 enum CatalogState {
@@ -52,8 +52,7 @@ class StateAdminCatalog extends ViewStateModel {
       _catalogs = await repository.getCatalogs(catalogId: catalogId);
       if (_catalogs != null && _catalogs.length > 0) {
         _currentOptCatalog = _catalogs.first;
-        _currentTopic =
-            await repository.topicDetail(_currentOptCatalog.topicId);
+        _currentTopic = await repository.topicDetail(_currentOptCatalog.topicId);
       }
       setIdle();
     } catch (e, s) {
@@ -90,9 +89,7 @@ class StateAdminCatalog extends ViewStateModel {
   void setAddChildCatalogState() {
     _currentCatalogState = CatalogState.add;
     _rootChildAdd = false;
-    int order = currentOptCatalog.noChild
-        ? currentOptCatalog.order
-        : currentOptCatalog.child.last.order;
+    int order = currentOptCatalog.noChild ? currentOptCatalog.order : currentOptCatalog.child.last.order;
     _editOrder = (order + 1).toString();
     notifyListeners();
   }

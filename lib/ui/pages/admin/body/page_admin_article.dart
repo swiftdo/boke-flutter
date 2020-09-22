@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web/states/states.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
+import 'state_admin_article.dart';
+import 'state_admin_article_add.dart';
 
 import '../table/table.dart';
 
@@ -58,9 +59,7 @@ class PageAdminArticle extends StatelessWidget {
                   List tags = ValueUtil.toList(value);
                   if (tags.length > 0) {
                     return Wrap(
-                      children: tags
-                          .map((e) => Text(ValueUtil.toStr(e['name'])))
-                          .toList(),
+                      children: tags.map((e) => Text(ValueUtil.toStr(e['name']))).toList(),
                     );
                   } else {
                     return Text(
@@ -211,8 +210,7 @@ class PageAdminArticle extends StatelessWidget {
     );
   }
 
-  Container _buildSubmitRow(
-      StateAdminArticleAdd addState, BuildContext context) {
+  Container _buildSubmitRow(StateAdminArticleAdd addState, BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 20),
       child: OutlineButton(
@@ -278,8 +276,7 @@ class PageAdminArticle extends StatelessWidget {
     );
   }
 
-  Container _buildSelectContentType(
-      BuildContext context, StateAdminArticleAdd addState) {
+  Container _buildSelectContentType(BuildContext context, StateAdminArticleAdd addState) {
     return Container(
       child: PopupMenuButton<TopicContentType>(
         child: Container(
@@ -315,8 +312,7 @@ class PageAdminArticle extends StatelessWidget {
     );
   }
 
-  Container _buildSelectSubject(
-      BuildContext context, StateAdminArticleAdd addState) {
+  Container _buildSelectSubject(BuildContext context, StateAdminArticleAdd addState) {
     return Container(
       child: PopupMenuButton<Subject>(
         child: Container(
@@ -328,9 +324,7 @@ class PageAdminArticle extends StatelessWidget {
             ),
           ),
           width: MediaQuery.of(context).size.width - 120 - 20 * 2,
-          child: addState.selectSubject == null
-              ? Text('选择文章分类')
-              : Text(addState.selectSubject.name),
+          child: addState.selectSubject == null ? Text('选择文章分类') : Text(addState.selectSubject.name),
           padding: EdgeInsets.only(
             top: 20,
             bottom: 20,
@@ -352,8 +346,7 @@ class PageAdminArticle extends StatelessWidget {
     );
   }
 
-  Container _buildSelectTags(
-      BuildContext context, StateAdminArticleAdd addState) {
+  Container _buildSelectTags(BuildContext context, StateAdminArticleAdd addState) {
     return Container(
       decoration: BoxDecoration(
         border: Border(
@@ -370,9 +363,7 @@ class PageAdminArticle extends StatelessWidget {
           ...addState.selectTags.map((e) {
             return _btnTag(e, addState);
           }),
-          addState.selectTags.length < addState.tags.length
-              ? _btnAddTag(addState)
-              : Container(),
+          addState.selectTags.length < addState.tags.length ? _btnAddTag(addState) : Container(),
         ],
       ),
     );
@@ -428,9 +419,7 @@ class PageAdminArticle extends StatelessWidget {
         addState.addTag(tag);
       },
       itemBuilder: (context) {
-        return addState.tags
-            .where((element) => !addState.selectTags.contains(element))
-            .map((Tag e) {
+        return addState.tags.where((element) => !addState.selectTags.contains(element)).map((Tag e) {
           return PopupMenuItem<Tag>(
             value: e,
             child: Text(e.name),

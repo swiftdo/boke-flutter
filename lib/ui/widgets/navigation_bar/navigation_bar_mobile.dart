@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/routing/route_names.dart';
+import 'package:boke/routing/route_names.dart';
 import 'navbar_logo.dart';
 
 class NavigationBarMobile extends StatelessWidget {

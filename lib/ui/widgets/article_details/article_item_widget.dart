@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 
 class ArticleItemWidget extends StatelessWidget {
   final Topic item;

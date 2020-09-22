@@ -1,4 +1,4 @@
-import 'package:flutter_web/model/model.dart';
+import 'package:boke/model/model.dart';
 
 import 'api.dart';
 

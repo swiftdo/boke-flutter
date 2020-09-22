@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web/locator.dart';
-import 'package:flutter_web/routing/route_names.dart';
-import 'package:flutter_web/services/service_navigation.dart';
-import 'package:flutter_web/states/state_login.dart';
+import 'package:boke/locator.dart';
+import 'package:boke/routing/route_names.dart';
+import 'package:boke/services/service_navigation.dart';
+import 'state_login.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:loveli_core/loveli_core.dart';
