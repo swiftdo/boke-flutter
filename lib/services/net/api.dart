@@ -6,7 +6,7 @@ final Http http = Http();
 class Http extends BaseHttp {
   @override
   void init() {
-    options.baseUrl = 'https://sb.loveli.site/api';
+    options.baseUrl = 'http://127.0.0.1:8080/api';
     interceptors.add(WebApiInterceptor());
   }
 }
