@@ -1,12 +1,14 @@
+import 'package:boke/config/config.dart';
 import 'package:dio/dio.dart';
 import 'package:loveli_core/loveli_core.dart';
+import 'package:boke/locator.dart';
 
 final Http http = Http();
 
 class Http extends BaseHttp {
   @override
   void init() {
-    options.baseUrl = 'http://127.0.0.1:8080/api';
+    options.baseUrl = locator<Config>().requestBaseURL;
     interceptors.add(WebApiInterceptor());
   }
 }
