@@ -12,7 +12,7 @@ class NavBarLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (context, sizeInfo) {
-        double sizeWH = sizeInfo.isMobile ? 30 : 40;
+        double sizeWH = sizeInfo.isMobile ? 30 : 60;
         double radius = sizeInfo.isMobile ? 15 : 4;
 
         return GestureDetector(
