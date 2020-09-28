@@ -1,10 +1,11 @@
+import 'package:boke/states/state_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
-import 'state_article_detail.dart';
-import 'package:boke/states/state_theme.dart';
 import 'package:markdown_widget/markdown_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'state_article_detail.dart';
 
 class PageArticleDetail extends StatelessWidget {
   final String topicId;

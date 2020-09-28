@@ -16,7 +16,7 @@ class NavigationBarTableDesktop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: 150),
             child: NavBarLogo(
               navigationPath: RouteHome,
             ),
@@ -51,7 +51,7 @@ class NavigationBarTableDesktop extends StatelessWidget {
                     onTap: () => state.toggle(),
                     child: Container(
                       padding: EdgeInsets.all(8),
-                      margin: const EdgeInsets.only(right: 20),
+                      margin: const EdgeInsets.only(right: 150),
                       child: Image(
                         image: AssetImage(
                           state.isDark ? 'assets/images/theme_light.png' : 'assets/images/theme_dark.png',

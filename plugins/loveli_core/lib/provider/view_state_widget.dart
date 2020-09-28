@@ -18,21 +18,13 @@ class ViewStateWidget extends StatelessWidget {
   final VoidCallback onPressed;
 
   ViewStateWidget(
-      {Key key,
-      this.image,
-      this.title,
-      this.message,
-      this.buttonText,
-      @required this.onPressed,
-      this.buttonTextData})
+      {Key key, this.image, this.title, this.message, this.buttonText, @required this.onPressed, this.buttonTextData})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var titleStyle =
-        Theme.of(context).textTheme.subtitle1.copyWith(color: Colors.grey);
-    var messageStyle = titleStyle.copyWith(
-        color: titleStyle.color.withOpacity(0.7), fontSize: 14);
+    var titleStyle = Theme.of(context).textTheme.subtitle1.copyWith(color: Colors.grey);
+    var messageStyle = titleStyle.copyWith(color: titleStyle.color.withOpacity(0.7), fontSize: 14);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,8 +93,7 @@ class ViewStateErrorWidget extends StatelessWidget {
       case ViewStateErrorType.networkTimeOutError:
         defaultImage = Transform.translate(
           offset: Offset(-50, 0),
-          child: const Icon(Icons.signal_cellular_connected_no_internet_4_bar,
-              size: 100, color: Colors.grey),
+          child: const Icon(Icons.signal_cellular_connected_no_internet_4_bar, size: 100, color: Colors.grey),
         );
         defaultTitle = '网络错误';
         // errorMessage = ''; // 网络异常移除message提示
@@ -139,12 +130,7 @@ class ViewStateEmptyWidget extends StatelessWidget {
   final Widget buttonText;
   final VoidCallback onPressed;
 
-  const ViewStateEmptyWidget(
-      {Key key,
-      this.image,
-      this.message,
-      this.buttonText,
-      @required this.onPressed})
+  const ViewStateEmptyWidget({Key key, this.image, this.message, this.buttonText, @required this.onPressed})
       : super(key: key);
 
   @override
@@ -152,7 +138,7 @@ class ViewStateEmptyWidget extends StatelessWidget {
     return ViewStateWidget(
       onPressed: this.onPressed,
       image: image ?? const Icon(Icons.refresh, size: 100, color: Colors.grey),
-      title: message ?? '空',
+      title: message ?? '暂无数据',
       buttonText: buttonText,
       buttonTextData: '重新加载',
     );
@@ -166,12 +152,7 @@ class ViewStateUnAuthWidget extends StatelessWidget {
   final Widget buttonText;
   final VoidCallback onPressed;
 
-  const ViewStateUnAuthWidget(
-      {Key key,
-      this.image,
-      this.message,
-      this.buttonText,
-      @required this.onPressed})
+  const ViewStateUnAuthWidget({Key key, this.image, this.message, this.buttonText, @required this.onPressed})
       : super(key: key);
 
   @override

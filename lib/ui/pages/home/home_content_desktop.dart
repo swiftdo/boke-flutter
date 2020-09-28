@@ -13,8 +13,8 @@ class HomeContentDesktop extends StatelessWidget {
           child: ArticleDetails(),
         ),
         Container(
-          margin: EdgeInsets.only(left: 100, right: 100),
-          child: Center(
+          margin: EdgeInsets.only(left: 80, right: 150),
+          child: Container(
             child: CallToAction(
               onPressed: () => locator<ServiceNavigation>().navigateTo(RouteArticles),
               title: '进入阅读',
