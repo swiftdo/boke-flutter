@@ -2,12 +2,24 @@
 
 [swiftdo/boke-flutter](https://github.com/swiftdo/boke-flutter.git)
 
+## 隔离 flutter 环境
+
+建议安装 fvm: [leoafarias/fvm](https://github.com/leoafarias/fvm)
+
 ## 安装运行
 
 ```sh
 flutter channel beta
 flutter upgrade
 flutter config --enable-web
+```
+
+如果采用 fvm 的话：
+
+```sh
+fvm install beta
+fvm flutter doctor
+fvm flutter config --enable-web
 ```
 
 ## 联系
