@@ -1,3 +1,7 @@
+import 'dart:ui';
+
+import 'package:boke/locator.dart';
+import 'package:boke/services/service_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:boke/routing/route_names.dart';
 import 'package:provider/provider.dart';
@@ -27,9 +31,33 @@ class NavigationBarTableDesktop extends StatelessWidget {
               Consumer<GlobalUserState>(
                 builder: (context, state, _) {
                   if (state.isLogin) {
-                    return NavBarItem(
-                      title: 'Admin',
-                      navigationPath: RouteAdmin,
+                    return DropdownButtonHideUnderline(
+                      child: DropdownButton<int>(
+                        hint: Text(
+                          state.user.name,
+                          style: Theme.of(context).textTheme.subtitle1.copyWith(fontSize: 18),
+                        ),
+                        iconSize: 0,
+                        items: [
+                          DropdownMenuItem(
+                            value: 1,
+                            child: Text(
+                              '控制台',
+                            ),
+                          ),
+                          DropdownMenuItem(
+                            value: 2,
+                            child: Text('退出'),
+                          )
+                        ],
+                        onChanged: (index) {
+                          if (index == 1) {
+                            locator<ServiceNavigation>().navigateTo(RouteAdmin);
+                          } else if (index == 2) {
+                            state.logout();
+                          }
+                        },
+                      ),
                     );
                   } else {
                     return NavBarItem(
