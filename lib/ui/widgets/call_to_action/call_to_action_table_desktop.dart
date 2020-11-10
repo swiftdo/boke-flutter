@@ -10,7 +10,7 @@ class CallToActionTabletDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: onPressed,
-      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
       child: Text(
         title,
       ),

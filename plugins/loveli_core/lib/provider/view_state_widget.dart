@@ -42,7 +42,7 @@ class ViewStateWidget extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 200, minHeight: 150),
+                constraints: BoxConstraints(maxHeight: 200, minHeight: 100),
                 child: SingleChildScrollView(
                   child: Text(message ?? '', style: messageStyle),
                 ),
@@ -50,7 +50,8 @@ class ViewStateWidget extends StatelessWidget {
             ],
           ),
         ),
-        Center(
+        Container(
+          margin: EdgeInsets.only(top: 10),
           child: ViewStateButton(
             child: buttonText,
             textData: buttonTextData,
@@ -196,16 +197,13 @@ class ViewStateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(
+    return RaisedButton(
+      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
       child: child ??
           Text(
             textData ?? '重试',
-            style: TextStyle(wordSpacing: 5),
           ),
-      textColor: Colors.grey,
-      splashColor: Theme.of(context).splashColor,
       onPressed: onPressed,
-      highlightedBorderColor: Theme.of(context).splashColor,
     );
   }
 }
