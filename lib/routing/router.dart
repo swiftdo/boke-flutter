@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:boke/model/booklet.dart';
-import 'package:boke/ui/pages/admin/body/body.dart';
 import 'package:boke/ui/pages/layout_template/layout_admin_template.dart';
 import 'package:boke/ui/ui.dart';
+import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
 
 import 'route_names.dart';
@@ -43,6 +41,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteAdmin:
       return _getAdminPageRoute(
         child: PageAdmin(),
+        settings: settings,
+      );
+    case RouteRegister:
+      return _getPageRoute(
+        child: PageRegister(),
+        settings: settings,
+      );
+    case RouteForgetPwd:
+      return _getPageRoute(
+        child: PageForgetPwd(),
         settings: settings,
       );
     default:

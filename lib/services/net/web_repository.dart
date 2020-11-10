@@ -14,6 +14,12 @@ class WebRepository {
     return ModelLogin.fromMap(data);
   }
 
+  Future register({String email, String name, String pwd}) async {
+    var response =
+        await http.post("/auth/register", data: FormData.fromMap({"email": email, "password": pwd, "name": name}));
+    return response.data;
+  }
+
   Future<ModelPage<Topic>> subjectTopics(String subjectId, {int page, int per = 10}) async {
     var response = await http.get("/subject/$subjectId/topics", queryParameters: {"per": per, "page": page});
     Map data = response.data;

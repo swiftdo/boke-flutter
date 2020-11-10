@@ -5,3 +5,5 @@ export 'articles/page_article_detail.dart';
 export 'layout_template/layout_template.dart';
 export 'login/page_login.dart';
 export 'admin/admin.dart';
+export 'login/page_forget_pwd.dart';
+export 'login/page_register.dart';

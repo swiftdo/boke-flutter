@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:boke/locator.dart';
-import 'package:boke/macro.dart';
 import 'package:boke/services/services.dart';
+import 'package:boke/states/global_user_state.dart';
+import 'package:flutter/material.dart';
 import 'package:loveli_core/loveli_core.dart';
 import 'package:oktoast/oktoast.dart';
-
-import 'package:boke/states/global_user_state.dart';
 
 class StateLogin extends ViewStateModel {
   final GlobalUserState globalUserState;

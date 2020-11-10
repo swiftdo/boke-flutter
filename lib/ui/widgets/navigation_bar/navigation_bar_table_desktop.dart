@@ -33,7 +33,7 @@ class NavigationBarTableDesktop extends StatelessWidget {
                     );
                   } else {
                     return NavBarItem(
-                      title: '登录',
+                      title: '登录/注册',
                       navigationPath: RouteLogin,
                     );
                   }
